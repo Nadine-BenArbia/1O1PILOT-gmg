@@ -1,0 +1,31 @@
+{
+  "name": "gmc_backend",
+  "version": "1.0.0",
+  "description": "auth",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "back": "nodemon server",
+    "front": "cd client && npm start",
+    "dev": "concurrently \"npm run front\" \"npm run back\""
+  },
+  "keywords": [],
+  "author": "nadine",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@types/styled-components": "^5.1.16",
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.13",
+    "react-icons": "^4.3.1",
+    "styled-components": "^5.3.3",
+    "validator": "^13.7.0"
+  }
+}

@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    justify-content: space-around;
+    padding: 3% 30%;
+    
+  }
+  label{
+    TEXT-ALIGN: start;
+  }
+  form .join-us {
+    display: flex;
+  }
+  .container {
+    position: relative;
+    text-align: center;
+    background-image:url ("https://www.athletadesk.com/wp-content/uploads/2016/08/join-background.jpg") ;
+  }
+  

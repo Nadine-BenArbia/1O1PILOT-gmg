@@ -1,0 +1,7 @@
+.JobList{
+display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2% 5%;
+    background-color: #d3e0e2;
+}
