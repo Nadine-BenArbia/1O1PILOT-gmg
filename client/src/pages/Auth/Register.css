@@ -12,7 +12,7 @@ form {
   form .join-us {
     display: flex;
   }
-  .container {
+  .div.form-container {
     position: relative;
     text-align: center;
     background-image:url ("https://www.athletadesk.com/wp-content/uploads/2016/08/join-background.jpg") ;

@@ -9,20 +9,22 @@ import {
   CLEAR_ERRORS
 } from "../constant/User";
 
-export const RegisterUser = newUser => async dispatch => {
+export const RegisterUser = (newUser,history) => async dispatch => {
   dispatch({ type: LOAD_USER });
   try {
     let { data } = await axios.post("/api/user/register", newUser);
     dispatch({ type: REGISTER_USER, payload: data });
+    history.push("/jobList")
   } catch (error) {
     dispatch({ type: FAIL_USER, payload: error.response.data });
   }
 };
-export const LoginUser = user => async dispatch => {
+export const LoginUser = (user,history) => async dispatch => {
   dispatch({ type: LOAD_USER });
   try {
     let { data } = await axios.post("/api/user/login", user);
     dispatch({ type: LOGIN_USER, payload: data });
+    history.push("/jobList")
   } catch (error) {
     dispatch({ type: FAIL_USER, payload: error.response.data });
   }

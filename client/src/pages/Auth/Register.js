@@ -12,23 +12,28 @@ const Register = () => {
     name: "",
     email: "",
     password: "",
-    phone: 0
+    phone: 0,
   });
-  const errors = useSelector(state => state.userReducer.errors);
+  const errors = useSelector((state) => state.userReducer.errors);
   const history = useHistory();
   const dispatch = useDispatch();
-  const handleUser = e => {
+  const handleUser = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
     console.log(user);
   };
-  const handleRegister = e => {
+  const handleRegister = (e) => {
     e.preventDefault();
     dispatch(RegisterUser(user, history));
   };
 
   return (
-    <>
-      {errors && errors.map(el => <Notification error={el} />)}
+    <div className="form-container">
+      {errors && errors.map((el) => <Notification error={el} />)}
+      <div>
+        <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          FIND THE JOB THAT FITS YOUR LIFE{" "}
+        </h1> 
+      </div>
       <form>
         <label>Name</label>
         <input
@@ -68,7 +73,7 @@ const Register = () => {
         />
         <input type="submit" onClick={handleRegister} />
       </form>
-    </>
+    </div>
   );
 };
 

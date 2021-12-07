@@ -2,12 +2,13 @@ import React from "react";
 import "./JobCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteJob, getJob } from "../JS/actions/Jobs";
 import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.userReducer.user);
   const handleDelete = () => {
     const result = window.confirm("are you sure");
     if (result) {
@@ -18,7 +19,7 @@ const JobCard = ({ job }) => {
     dispatch(getJob(job._id));
   };
   return (
-    <div className="container">
+    <div className="containerCard">
       <div className="card">
         <div className="card-body">
           <div className="name">
@@ -36,10 +37,19 @@ const JobCard = ({ job }) => {
           </div>
           <div className="edit-delete">
             <Link to={`/edit/${job._id}`}>
-              <EditIcon onClick={handlejob} />
+              {user && user._id == job.id_user && (
+                <EditIcon onClick={handlejob} />
+              )}
             </Link>
-            <DeleteIcon onClick={handleDelete} />
+            {user && user._id == job.id_user && (
+              <DeleteIcon onClick={handleDelete} />
+            )}
           </div>
+          {
+            <Link to="/details">
+              <div>Details</div>
+            </Link>
+          }
         </div>
       </div>
     </div>

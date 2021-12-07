@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path={["/Addjob","/edit/:id"]}>
+        <Route path={["/Addjob", "/edit/:id"]}>
           {" "}
           <AddJob />
         </Route>
@@ -39,7 +39,7 @@ function App() {
         </Route>
         <Route path="/Login" component={Login} />
         <Route path="/Register" component={Register} />
-        <PrivateRoute path="/Profile" component={Profile} />
+        <PrivateRoute path="/details" component={Profile} />
         <Route path="/*" components={Error} />
       </Switch>
       <Footer />

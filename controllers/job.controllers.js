@@ -18,11 +18,12 @@ exports.addJob = async (req, res) => {
 
     // newJob
     // save it in databse
-    const newJob = new Job({ ...req.body });
+    const newJob = new Job({ ...req.body,id_user:req.user._id });
     await newJob.save();
     // send success
     res.send({ msg: "add route", job: newJob });
   } catch (error) {
+    console.log(error)
     res.status(400).send({ msg: "job not saved", error });
   }
 };

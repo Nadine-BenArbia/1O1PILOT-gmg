@@ -16,7 +16,7 @@ router.post("/register", registerValidation(), Validation, Register);
 router.post("/login",loginValidation(),Validation, login);
 
 
-router.get ("/",isAuth,(req,res)=>{
+router.get ("/current",isAuth,(req,res)=>{
     res.send({msg : "authentifie", user: req.user});
 });
 

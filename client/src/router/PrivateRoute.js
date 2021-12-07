@@ -8,7 +8,7 @@ const PrivateRoute = ({ component, ...rest }) => {
   const isAuth = useSelector((state) => state.userReducer.isAuth);
 
   if (!token && !isAuth) {
-    return <Redirect to="/login" />;
+    return <Redirect to="/Login" />;
   } else {
     return <Route {...rest} component={component} />;
   }
