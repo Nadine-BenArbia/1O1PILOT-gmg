@@ -5,17 +5,19 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 import JobCard from "../components/JobCard";
 import "./JobList.css";
+import Addjob from "../components/AddJobSection/Addjob";
 
 const JobList = () => {
-  const jobs = useSelector(state => state.jobReducer.job);
-  const isLoad = useSelector(state => state.jobReducer.isLoad);
-  const isError = useSelector(state => state.jobReducer.isError);
+  const jobs = useSelector((state) => state.jobReducer.job);
+  const isLoad = useSelector((state) => state.jobReducer.isLoad);
+  const isError = useSelector((state) => state.jobReducer.isError);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllJob());
   }, []);
   return (
     <div>
+      <Addjob />
       {isLoad ? (
         <Box sx={{ display: "flex" }}>
           <CircularProgress />
@@ -26,7 +28,7 @@ const JobList = () => {
         <p> no jobs to apply</p>
       ) : (
         <div className="jobList">
-          {jobs?.map(el => (
+          {jobs?.map((el) => (
             <JobCard job={el} key={el._id} />
           ))}
         </div>

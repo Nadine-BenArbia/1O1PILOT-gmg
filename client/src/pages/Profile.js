@@ -25,9 +25,6 @@ const Profile = () => {
                 style={{ width: "150px!important" }}
                 src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
               />
-              <span className="font-weight-bold">Edogaru</span>
-              <span className="text-black-50">edogaru@mail.com.my</span>
-              <span> </span>
             </div>
           </div>
           <div className="col-md-5 border-right">
@@ -37,21 +34,12 @@ const Profile = () => {
               </div>
               <div className="row mt-2">
                 <div className="col-md-6">
-                  <label className="labels">Name</label>
+                  <label className="labels">Full NAME</label>
                   <input
                     type="text"
                     className="form-control"
                     placeholder="first name"
                     defaultValue
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="labels">Surname</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    defaultValue
-                    placeholder="surname"
                   />
                 </div>
               </div>
@@ -65,33 +53,7 @@ const Profile = () => {
                     defaultValue
                   />
                 </div>
-                <div className="col-md-12">
-                  <label className="labels">Address Line 1</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="enter address line 1"
-                    defaultValue
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="labels">Address Line 2</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="enter address line 2"
-                    defaultValue
-                  />
-                </div>
-                <div className="col-md-12">
-                  <label className="labels">Postcode</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="enter address line 2"
-                    defaultValue
-                  />
-                </div>
+
                 <div className="col-md-12">
                   <label className="labels">State</label>
                   <input
@@ -137,15 +99,6 @@ const Profile = () => {
                     className="form-control"
                     placeholder="country"
                     defaultValue
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label className="labels">State/Region</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    defaultValue
-                    placeholder="state"
                   />
                 </div>
               </div>

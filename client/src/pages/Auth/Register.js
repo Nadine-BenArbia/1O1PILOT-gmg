@@ -12,7 +12,6 @@ const Register = () => {
     name: "",
     email: "",
     password: "",
-    phone: 0,
   });
   const errors = useSelector((state) => state.userReducer.errors);
   const history = useHistory();
@@ -29,12 +28,11 @@ const Register = () => {
   return (
     <div className="form-container">
       {errors && errors.map((el) => <Notification error={el} />)}
-      <div>
-        <h1 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+
+      <form className="Register-form">
+        <h1 className="mt-6 text-center text-3xl font-extrabold text-white">
           FIND THE JOB THAT FITS YOUR LIFE{" "}
-        </h1> 
-      </div>
-      <form>
+        </h1>
         <label>Name</label>
         <input
           type="text"
@@ -63,15 +61,18 @@ const Register = () => {
           onInput={handleUser}
           value={user.password}
         />
-        <label>role</label>
-        <input
-          type="string"
-          placeholder="user or company"
-          name="role"
-          onInput={handleUser}
-          value={user.role}
-        />
-        <input type="submit" onClick={handleRegister} />
+
+        <label htmlFor="">Role </label>
+        <select id="role" placeholder="">
+          <option label="user" value={user.role} onSelect={handleUser}>
+            User
+          </option>
+          <option label="company" value={user.role} onSelect={handleUser}>
+            Company
+          </option>
+        </select>
+
+        <input className="Re-submit" type="submit" onClick={handleRegister} />
       </form>
     </div>
   );

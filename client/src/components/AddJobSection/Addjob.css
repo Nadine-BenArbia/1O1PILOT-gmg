@@ -1,0 +1,19 @@
+
+.Addjob-container {
+    margin:  2% 10%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.Addjob-container img {
+    border-radius: 100%;
+    margin-left: -9%;
+}
+.addJob-SearchBar {
+    margin: auto 13%;
+}
+
+.addJob-SearchBar h1 {
+    font-size: xx-large;
+    text-transform: capitalize;
+    font-weight: 700;
+}

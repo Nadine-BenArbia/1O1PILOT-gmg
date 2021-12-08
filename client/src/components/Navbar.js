@@ -56,33 +56,47 @@ function Navbar() {
           </ul>
           {isAuth ? (
             <div>
-              {button && (
-                <Button
-                  buttonStyle="btn--outline"
-                  onClick={() => dispatch(logout())}
-                >
-                  {" "}
-                  <Link to="/"> Logout</Link>{" "}
-                </Button>
-              )}
-              <div>
-                <Link to="/details">Profile</Link>
-              </div>
+              <li className="nav-item">
+                <div className="nav-item-role">
+                  {button && (
+                    <Button
+                      buttonStyle="btn--outline"
+                      onClick={() => dispatch(logout())}
+                    >
+                      {" "}
+                      <Link className="logout" to="/">
+                        {" "}
+                        Logout
+                      </Link>{" "}
+                    </Button>
+                  )}
+
+                  {button && (
+                    <Button
+                      buttonStyle="btn--outline"
+                      onClick={() => dispatch(logout())}
+                    >
+                      <Link className="Profile" to="/details">
+                        Profile
+                      </Link>
+                    </Button>
+                  )}
+                </div>
+              </li>
             </div>
           ) : (
-            <>
+            <li className="nav-item">
               {button && (
-                <Button buttonStyle="btn--outline">
+                <Link
+                  className="nav-login"
+                  to="/Login"
+                  onClick={closeMobileMenu}
+                >
                   {" "}
-                  <Link to="/Login"> Login</Link>{" "}
-                </Button>
+                  Login
+                </Link>
               )}
-              {button && (
-                <Button buttonStyle="btn--outline">
-                  <Link to="/Register">Register </Link>{" "}
-                </Button>
-              )}
-            </>
+            </li>
           )}
         </div>
       </nav>

@@ -19,37 +19,35 @@ const JobCard = ({ job }) => {
     dispatch(getJob(job._id));
   };
   return (
-    <div className="containerCard">
-      <div className="card">
-        <div className="card-body">
-          <div className="name">
-            {job.companyName}
-            <span className="Company-name">{job.name}</span>
+    <div className="card ">
+      <div className="d-flex justify-content-between">
+        <div className="d-flex flex-row align-items-center">
+          <div className="ms-2 c-details">
+            <h6 className="mb-0"> {job.companyName}</h6>{" "}
+            <span> {job.location}</span>
           </div>
-          <div className="job-infos">
-            <span className="job-description">{job.location}</span>
-          </div>
-          <div className="job-skills">
-            <span className="skills">{job.skills}</span>
-          </div>
-          <div className="job-email">
-            <span className="email">{job.email}</span>
-          </div>
-          <div className="edit-delete">
-            <Link to={`/edit/${job._id}`}>
-              {user && user._id == job.id_user && (
-                <EditIcon onClick={handlejob} />
-              )}
-            </Link>
+        </div>
+        <div className="badge">
+          {" "}
+          <span>{job.name}</span>{" "}
+        </div>
+      </div>
+      <div className="mt-5">
+        <h3> {job.skills} </h3>
+
+        <div className="mt-3"> {job.email} </div>
+
+        <div className="d-flex justify-content-between">
+          <Link to={`/edit/${job._id}`}>
             {user && user._id == job.id_user && (
-              <DeleteIcon onClick={handleDelete} />
+              <EditIcon onClick={handlejob} />
             )}
-          </div>
-          {
-            <Link to="/details">
-              <div>Details</div>
-            </Link>
-          }
+          </Link>
+
+          {user && user._id == job.id_user && (
+            <DeleteIcon onClick={handleDelete} />
+          )}
+          <div className="badge">{<Link to="/details">Details</Link>}</div>
         </div>
       </div>
     </div>

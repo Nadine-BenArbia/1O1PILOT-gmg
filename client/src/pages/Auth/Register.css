@@ -1,12 +1,27 @@
 form {
-    display: flex;
-    flex-direction: column;
-    margin: 5%;
-    justify-content: space-around;
-    padding: 3% 30%;
-    
-  }
-  label{
+  background: url('https://live.staticflickr.com/7904/47346851571_e45bfd7450_b.jpg') center center/cover no-repeat ;
+  height: 48vh;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow:inset 0 0 0 1000px rgba(0, 0,0, 0.2);
+  object-fit: contain ;
+
+}
+.Re-submit input {
+  width: 12%;
+  margin-top: 1%;
+} 
+.Register-form select{
+  width: 16%;
+}
+  
+.Register-form label{
     TEXT-ALIGN: start;
   }
   form .join-us {
