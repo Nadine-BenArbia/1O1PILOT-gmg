@@ -1,47 +1,48 @@
 import { Button, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory,useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { addJob, editJob } from "../JS/actions/Jobs";
-
+import "./addjob.css";
 const AddJob = () => {
   const [job, setJob] = useState({});
-  const [edit,steEdit]= useState(false);
-  const jobEdit = useSelector(state => state.jobReducer.job)
+  const [edit, steEdit] = useState(false);
+  const jobEdit = useSelector((state) => state.jobReducer.job);
 
   const dispatch = useDispatch();
-   const history=useHistory();
- const params=useParams();
+  const history = useHistory();
+  const params = useParams();
 
- //---------------------------------------------
-useEffect(() => {
- if (params.id){
-   steEdit(true);
- } else {
-   steEdit(false);
- }
-  edit? setJob(jobEdit):setJob({name:"",companyName:"",skills:"",location:""})
-}, [params,edit,jobEdit])
+  //---------------------------------------------
+  useEffect(() => {
+    if (params.id) {
+      steEdit(true);
+    } else {
+      steEdit(false);
+    }
+    edit
+      ? setJob(jobEdit)
+      : setJob({ name: "", companyName: "", skills: "", location: "" });
+  }, [params, edit, jobEdit]);
 
-
-//--------------------------------------------
-  const handleChange = e => {
+  //--------------------------------------------
+  const handleChange = (e) => {
     setJob({ ...job, [e.target.name]: e.target.value });
   };
   const handleJob = () => {
-   if (job.name && job.companyName){
-     if(edit){
-       dispatch (editJob(params.id,job,history))
-     }else {
-      dispatch(addJob(job,history));
-     }
-   }else{ 
-     alert("fields required");
-  }
+    if (job.name && job.companyName) {
+      if (edit) {
+        dispatch(editJob(params.id, job, history));
+      } else {
+        dispatch(addJob(job, history));
+      }
+    } else {
+      alert("fields required");
+    }
   };
 
   return (
-    <form>
+    <form className="addJob-form">
       <br />
       <TextField
         id="outlined-required"

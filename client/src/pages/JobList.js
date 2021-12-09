@@ -6,6 +6,7 @@ import Box from "@mui/material/Box";
 import JobCard from "../components/JobCard";
 import "./JobList.css";
 import Addjob from "../components/AddJobSection/Addjob";
+import AddJob from "./AddJob";
 
 const JobList = () => {
   const jobs = useSelector((state) => state.jobReducer.job);
@@ -15,9 +16,12 @@ const JobList = () => {
   useEffect(() => {
     dispatch(getAllJob());
   }, []);
+  const isAuth = useSelector((state) => state.userReducer.isAuth);
+  const user = useSelector((state) => state.userReducer.user);
   return (
     <div>
       <Addjob />
+      <>{isAuth && user.role == "recruter" && <AddJob />}</>
       {isLoad ? (
         <Box sx={{ display: "flex" }}>
           <CircularProgress />

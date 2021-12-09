@@ -13,6 +13,9 @@ import Home from "./pages/Home";
 import JobList from "./pages/JobList";
 import Profile from "./pages/Profile";
 import PrivateRoute from "./router/PrivateRoute";
+import { Admin, Resource } from "react-admin";
+import restprovider from "ra-data-simple-rest";
+import JoBlist from "./components/Admin components/JoBlist";
 
 function App() {
   const dispatch = useDispatch();

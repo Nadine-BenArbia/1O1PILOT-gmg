@@ -33,17 +33,6 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {isAuth && user.role == "recruter" && (
-              <li className="nav-item">
-                <Link
-                  to="/AddJob"
-                  className="nav-links"
-                  onClick={closeMobileMenu}
-                >
-                  Add Job
-                </Link>
-              </li>
-            )}
             <li className="nav-item">
               <Link
                 to="/jobList"

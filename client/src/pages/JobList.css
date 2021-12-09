@@ -1,8 +1,7 @@
+.JobList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
-.JobList{
-display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-     
-    background-color: #d3e0e2;
+  background-color: #d3e0e2;
 }
