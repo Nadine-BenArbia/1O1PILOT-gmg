@@ -59,7 +59,7 @@ const LoginSection = () => {
             <Button buttonStyle="btn--outline">
               <Link to="/Register">
                 {" "}
-                if you don't have account Register here : Register{" "}
+                if you don't have account Register here{" "}
               </Link>{" "}
             </Button>
           )}

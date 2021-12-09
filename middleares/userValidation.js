@@ -6,13 +6,10 @@ exports.registerValidation = () => [
   check("name").notEmpty(),
 ];
 
-exports.loginValidation=()=> [
-    check("email", "email is required").isEmail(),
-    check("password",'check password').isLength({ min: 8 }).notEmpty(),
-
+exports.loginValidation = () => [
+  check("email", "email is required").isEmail(),
+  check("password", "check password").isLength({ min: 8 }).notEmpty(),
 ];
-
-
 
 exports.Validation = (req, res, next) => {
   const errors = validationResult(req);

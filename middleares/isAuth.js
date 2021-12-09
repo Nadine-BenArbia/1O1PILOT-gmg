@@ -22,3 +22,13 @@ exports.isAuth = async (req, res, next) => {
     return res.status(401).send({ errors: [{ msg: "not Authorized11" }] });
   }
 };
+const admin = (req, res, next) => {
+  if (req.User && req.User.isAdmin) {
+    next();
+  } else {
+    res.status(401);
+    throw new Error("not authorized");
+  }
+};
+
+export { isAuth, admin };
