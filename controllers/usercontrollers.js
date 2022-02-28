@@ -29,9 +29,12 @@ exports.Register = async (req, res) => {
     );
 
     //save user
+    console.log(newUser);
     await newUser.save();
+
     res.send({ msg: "register success", user: newUser, token });
   } catch (error) {
+    console.log(newUser);
     console.log(error);
     res.send({ errors: [{ msg: "can not register the user" }] });
   }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Notification from "../../components/Notification";
 import { RegisterUser } from "../../JS/actions/User";
@@ -13,6 +12,7 @@ const Register = () => {
     name: "",
     email: "",
     password: "",
+    role: "",
   });
   const errors = useSelector((state) => state.userReducer.errors);
   const history = useHistory();
@@ -63,7 +63,7 @@ const Register = () => {
           value={user.password}
         />
 
-        <label htmlFor="">Role </label>
+        <label> Role </label>
         <select id="role" placeholder="">
           <option label="user" value={user.role} onSelect={handleUser}>
             User
