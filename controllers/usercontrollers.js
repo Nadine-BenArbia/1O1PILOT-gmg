@@ -25,16 +25,14 @@ exports.Register = async (req, res) => {
         _id: newUser._id,
       },
       process.env.SECRET_KEY,
-      { expiresIn: "1h" }
+      { expiresIn: "24h" }
     );
 
     //save user
     console.log(newUser);
     await newUser.save();
-
     res.send({ msg: "register success", user: newUser, token });
   } catch (error) {
-    console.log(newUser);
     console.log(error);
     res.send({ errors: [{ msg: "can not register the user" }] });
   }

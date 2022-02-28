@@ -16,7 +16,7 @@ export const RegisterUser = (newUser, history) => async (dispatch) => {
     dispatch({ type: REGISTER_USER, payload: data });
     history.push("/jobList");
   } catch (error) {
-    dispatch({ type: FAIL_USER, payload: error.response.data });
+    dispatch({ type: FAIL_USER, payload: error });
   }
 };
 export const LoginUser = (user, history) => async (dispatch) => {

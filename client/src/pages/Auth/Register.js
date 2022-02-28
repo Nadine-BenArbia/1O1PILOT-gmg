@@ -64,7 +64,13 @@ const Register = () => {
         />
 
         <label> Role </label>
-        <select id="role" value={this.user.role} onChange={handleUser} placeholder="" name="role">
+        <select
+          id="role"
+          value={user.role}
+          onChange={handleUser}
+          placeholder=""
+          name="role"
+        >
           <option label="user" value="user" onSelect={handleUser}>
             User
           </option>
