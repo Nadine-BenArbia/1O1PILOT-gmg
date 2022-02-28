@@ -6,34 +6,34 @@ import {
   CURRENT_USER,
   REGISTER_USER,
   LOGOUT_USER,
-  CLEAR_ERRORS
+  CLEAR_ERRORS,
 } from "../constant/User";
 
-export const RegisterUser = (newUser,history) => async dispatch => {
+export const RegisterUser = (newUser, history) => async (dispatch) => {
   dispatch({ type: LOAD_USER });
   try {
     let { data } = await axios.post("/api/user/register", newUser);
     dispatch({ type: REGISTER_USER, payload: data });
-    history.push("/jobList")
+    history.push("/jobList");
   } catch (error) {
     dispatch({ type: FAIL_USER, payload: error.response.data });
   }
 };
-export const LoginUser = (user,history) => async dispatch => {
+export const LoginUser = (user, history) => async (dispatch) => {
   dispatch({ type: LOAD_USER });
   try {
     let { data } = await axios.post("/api/user/login", user);
     dispatch({ type: LOGIN_USER, payload: data });
-    history.push("/jobList")
+    history.push("/jobList");
   } catch (error) {
     dispatch({ type: FAIL_USER, payload: error.response.data });
   }
 };
-export const current = () => async dispatch => {
+export const current = () => async (dispatch) => {
   const config = {
     headers: {
-      authorization: localStorage.getItem("token")
-    }
+      authorization: localStorage.getItem("token"),
+    },
   };
   dispatch({ type: LOAD_USER });
   try {
@@ -46,12 +46,12 @@ export const current = () => async dispatch => {
 
 export const logout = () => {
   return {
-    type: LOGOUT_USER
+    type: LOGOUT_USER,
   };
 };
 
 export const clearErrors = () => {
   return {
-    type: CLEAR_ERRORS
+    type: CLEAR_ERRORS,
   };
 };

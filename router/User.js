@@ -1,11 +1,11 @@
 const express = require("express");
 const { Register, login } = require("../controllers/usercontrollers");
-const { isAuth } = require("../middleares/isAuth");
+const { isAuth } = require("../middlweares/isAuth");
 const {
   registerValidation,
   Validation,
   loginValidation,
-} = require("../middleares/userValidation");
+} = require("../middlweares/userValidation");
 
 const router = express.Router();
 
@@ -13,13 +13,10 @@ const router = express.Router();
 router.post("/register", registerValidation(), Validation, Register);
 
 // login
-router.post("/login",loginValidation(),Validation, login);
+router.post("/login", loginValidation(), Validation, login);
 
-
-router.get ("/current",isAuth,(req,res)=>{
-    res.send({msg : "authentifie", user: req.user});
+router.get("/current", isAuth, (req, res) => {
+  res.send({ msg: "authentifie", user: req.user });
 });
-
-
 
 module.exports = router;

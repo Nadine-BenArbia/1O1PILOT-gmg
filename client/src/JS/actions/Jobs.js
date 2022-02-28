@@ -21,12 +21,12 @@ export const getAllJob = () => async (dispatch) => {
 export const deleteJob = (id) => async (dispatch) => {
   const config = {
     headers: {
-      authorization: localStorage.getItem("token")
-    }
+      authorization: localStorage.getItem("token"),
+    },
   };
   dispatch({ type: GET_JOBS_LOAD });
   try {
-    await axios.delete(`api/job/${id}`,config);
+    await axios.delete(`api/job/${id}`, config);
     dispatch(getAllJob());
   } catch (error) {
     dispatch({ type: GET_JOBS_FAIL });
@@ -37,10 +37,10 @@ export const addJob = (newJob, history) => async (dispatch) => {
   try {
     const config = {
       headers: {
-        authorization: localStorage.getItem("token")
-      }
+        authorization: localStorage.getItem("token"),
+      },
     };
-    await axios.post("api/job", newJob,config);
+    await axios.post("api/job", newJob, config);
     dispatch(getAllJob());
 
     history.push("/jobList");
@@ -62,10 +62,10 @@ export const editJob = (id, editJob, history) => async (dispatch) => {
   try {
     const config = {
       headers: {
-        authorization: localStorage.getItem("token")
-      }
+        authorization: localStorage.getItem("token"),
+      },
     };
-    await axios.put(`/api/job/${id}`, editJob,config);
+    await axios.put(`/api/job/${id}`, editJob, config);
     dispatch(getAllJob());
     alert("job uptdated");
   } catch (error) {

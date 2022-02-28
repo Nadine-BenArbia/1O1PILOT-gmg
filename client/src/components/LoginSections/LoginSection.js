@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import Notification from "../Notification";
 import { LoginUser } from "../../JS/actions/User";
 
 import "./LoginSection.css";
 import { Button } from "../Button/Button";
+import { useHistory } from "react-router-dom";
 
 const LoginSection = () => {
   const [user, setUser] = useState({

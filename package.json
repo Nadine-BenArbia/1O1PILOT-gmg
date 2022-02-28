@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "back": "nodemon server",
+    "back": "nodemon server --middlewear ./range.js",
     "front": "cd client && npm start",
     "dev": "concurrently \"npm run front\" \"npm run back\""
   },
