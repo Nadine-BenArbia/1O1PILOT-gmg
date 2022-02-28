@@ -64,11 +64,11 @@ const Register = () => {
         />
 
         <label> Role </label>
-        <select id="role" placeholder="">
-          <option label="user" value={user.role} onSelect={handleUser}>
+        <select id="role" value={this.user.role} onChange={handleUser} placeholder="" name="role">
+          <option label="user" value="user" onSelect={handleUser}>
             User
           </option>
-          <option label="company" value={user.role} onSelect={handleUser}>
+          <option label="company" value="company" onSelect={handleUser}>
             Company
           </option>
         </select>
