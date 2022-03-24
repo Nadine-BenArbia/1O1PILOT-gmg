@@ -16,8 +16,10 @@ const JobList = () => {
   useEffect(() => {
     dispatch(getAllJob());
   }, []);
+
   const isAuth = useSelector((state) => state.userReducer.isAuth);
   const user = useSelector((state) => state.userReducer.user);
+
   return (
     <div>
       <Addjob />
