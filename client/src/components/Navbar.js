@@ -61,10 +61,7 @@ function Navbar() {
                   )}
 
                   {button && (
-                    <Button
-                      buttonStyle="btn--outline"
-                      onClick={() => dispatch(logout())}
-                    >
+                    <Button>
                       <Link className="Profile" to="/details">
                         Profile
                       </Link>
@@ -76,11 +73,7 @@ function Navbar() {
           ) : (
             <li className="nav-item">
               {button && (
-                <Link
-                  className="nav-login"
-                  to="/Login"
-                  onClick={closeMobileMenu}
-                >
+                <Link className="nav-login" to="/Login">
                   {" "}
                   Login
                 </Link>

@@ -23,7 +23,7 @@ const JobList = () => {
   return (
     <div>
       <Addjob />
-      <>{isAuth && user.role == "recruter" && <AddJob />}</>
+      <div> {isAuth && user.role == "recruter" && <AddJob />}</div>
       {isLoad ? (
         <Box sx={{ display: "flex" }}>
           <CircularProgress />

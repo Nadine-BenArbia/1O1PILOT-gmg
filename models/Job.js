@@ -25,11 +25,6 @@ const jobSchema = new Schema({
     ref: "user",
     required: true,
   },
-  role: {
-    type: String,
-    required: true,
-    enum: ["user", "recruter", "admin"],
-  },
 });
 
 module.exports = job = model("job", jobSchema);

@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { current } from "./JS/actions/User";
 import AddJob from "./pages/AddJob";
-import Admin from "./pages/Admin";
+
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
 import Error from "./pages/Error";
@@ -25,20 +25,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <div className="admin-acc">
-        <Switch>
-          <Route path={["/Admin/Addjob", "/Admin/edit/:id"]}>
-            {" "}
-            <AddJob />
-          </Route>
-          <Route path="/Admin/jobList">
-            {" "}
-            <JobList />{" "}
-          </Route>
 
-          <PrivateRoute path="/Admin/details" component={Profile} />
-        </Switch>
-      </div>
       <Switch>
         <Route exact path="/">
           <Home />

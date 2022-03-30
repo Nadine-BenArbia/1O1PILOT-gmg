@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import Notification from "../../components/Notification";
 import { RegisterUser } from "../../JS/actions/User";
-import userReducer from "../../JS/reducer/User";
 
 import "./Register.css";
 
@@ -71,11 +70,11 @@ const Register = () => {
           placeholder=""
           name="role"
         >
-          <option label="user" value="user" onSelect={handleUser}>
-            User
+          <option label="user" value="user">
+            user
           </option>
-          <option label="company" value="company" onSelect={handleUser}>
-            Company
+          <option label="company" value="recruter">
+            recruter
           </option>
         </select>
 
