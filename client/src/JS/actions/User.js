@@ -24,7 +24,11 @@ export const LoginUser = (user, history) => async (dispatch) => {
   try {
     let { data } = await axios.post("/api/user/login", user);
     dispatch({ type: LOGIN_USER, payload: data });
-    history.push("/jobList");
+    if (data.user.role === "admin") {
+      history.push("/admin");
+    } else {
+      history.push("/jobList");
+    }
   } catch (error) {
     dispatch({ type: FAIL_USER, payload: error.response.data });
   }
