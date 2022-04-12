@@ -39,7 +39,7 @@ const JobCard = ({ job }) => {
 
         <div className="d-flex justify-content-between">
           <Link to={`/edit/${job._id}`}>
-            {user && user._id == job.id_user && (
+            {user && user._id === job.id_user && (
               <EditIcon onClick={handlejob} />
             )}
           </Link>

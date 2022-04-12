@@ -7,6 +7,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  occupation: {
+    type: String,
+  },
   role: {
     type: String,
     required: true,

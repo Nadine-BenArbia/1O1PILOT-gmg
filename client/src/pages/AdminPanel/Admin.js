@@ -2,8 +2,8 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import Dashboard from "./AdminComponents/Dashboard";
 
+import AdminComponents from "./Admin.components";
 function Admin() {
   const user = useSelector((state) => state.userReducer.user);
   const isLoad = useSelector((state) => state.userReducer.isLoad);
@@ -11,8 +11,8 @@ function Admin() {
     <div>
       {isLoad ? (
         <h3>Wait....</h3>
-      ) : user && user.role === "admin" ? (
-        <Dashboard />
+      ) : user && user.role == "admin" ? (
+        <AdminComponents />
       ) : (
         <Redirect to="/Login" />
       )}

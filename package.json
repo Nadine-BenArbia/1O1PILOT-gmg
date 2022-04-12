@@ -4,8 +4,8 @@
   "description": "auth",
   "main": "server.js",
   "scripts": {
-    "start": "node server ",
-    "back": "nodemon server --middlewear ./range.js",
+    "start": "node server --middlewear ./range.js",
+    "back": "nodemon server ",
     "front": "cd client && npm start",
     "dev": "concurrently \"npm run front\" \"npm run back\""
   },
