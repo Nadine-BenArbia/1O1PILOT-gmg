@@ -1,4 +1,5 @@
 import {
+  ALL_USER,
   CLEAR_ERRORS,
   CURRENT_USER,
   FAIL_USER,
@@ -13,6 +14,7 @@ const initialstate = {
   errors: null,
   isLoad: false,
   isAuth: false,
+  users: {},
 };
 
 const userReducer = (state = initialstate, { type, payload }) => {
@@ -29,6 +31,8 @@ const userReducer = (state = initialstate, { type, payload }) => {
       return { ...state, isLoad: false, user: payload.user, isAuth: true };
     case CURRENT_USER:
       return { ...state, user: payload.user, isLoad: false, isAuth: true };
+    case ALL_USER:
+      return { ...state, user: payload, isLoad: false };
     case FAIL_USER:
       return { ...state, errors: payload.errors, isLoad: false };
     case LOGOUT_USER:

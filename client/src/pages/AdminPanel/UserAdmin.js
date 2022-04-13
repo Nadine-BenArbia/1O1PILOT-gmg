@@ -3,14 +3,15 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { useSelector } from "react-redux";
-import { current } from "../../JS/actions/User";
+
+import { getAlluser } from "../../JS/actions/User";
 
 import "./UserAdmin.css";
 const UserAdmin = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userReducer.user);
   useEffect(() => {
-    dispatch(current);
+    dispatch(getAlluser);
   }, []);
   return (
     <div>
@@ -56,7 +57,7 @@ const UserAdmin = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <td onLoad={current.user}>
+                      <td onLoad={getAlluser.user}>
                         <h5 className="font-medium mb-0">{user.name}</h5>
                       </td>
                       <td>
