@@ -9,7 +9,7 @@ const JobAdmin = () => {
   const job = useSelector((state) => state.jobReducer.job);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllJob(job._id));
+    dispatch(getAllJob());
   }, []);
   return (
     <div>

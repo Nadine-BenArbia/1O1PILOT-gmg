@@ -69,3 +69,15 @@ exports.login = async (req, res) => {
     return res.status(400).send({ msg: "login denied", error });
   }
 };
+
+exports.getAlluser = async (req, res) => {
+  try {
+    //    step 1 GETTING the data from databse
+    const userlist = await user.find();
+    // step2: when i get the list from the previous step i send it as a result
+    res.send({ user: userlist, msg: "get all users" });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({ msg: "can not get", error });
+  }
+};

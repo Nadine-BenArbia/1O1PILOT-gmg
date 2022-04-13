@@ -1,12 +1,16 @@
 import axios from "axios";
+
 import {
   FAIL_USER,
   LOAD_USER,
   LOGIN_USER,
   CURRENT_USER,
   REGISTER_USER,
+  ALL_USER,
   LOGOUT_USER,
   CLEAR_ERRORS,
+  GET_USERS_SUCCESS,
+  GET_USERS_FAIL,
 } from "../constant/User";
 
 export const RegisterUser = (newUser, history) => async (dispatch) => {
@@ -47,7 +51,18 @@ export const current = () => async (dispatch) => {
     dispatch({ type: FAIL_USER, payload: error.response.data });
   }
 };
-
+export const getAlluser = () => async (dispatch) => {
+  dispatch({ type: ALL_USER });
+  try {
+    let result = await axios.get("api/user/");
+    dispatch({
+      type: GET_USERS_SUCCESS,
+      payload: result.data.user,
+    });
+  } catch (error) {
+    dispatch({ type: GET_USERS_FAIL });
+  }
+};
 export const logout = () => {
   return {
     type: LOGOUT_USER,
