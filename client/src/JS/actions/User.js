@@ -55,9 +55,10 @@ export const getAlluser = () => async (dispatch) => {
   dispatch({ type: ALL_USER });
   try {
     let result = await axios.get("api/user/");
+    console.log(result.data.user);
     dispatch({
       type: GET_USERS_SUCCESS,
-      payload: result.data.user,
+      payload: result.data.users,
     });
   } catch (error) {
     dispatch({ type: GET_USERS_FAIL });

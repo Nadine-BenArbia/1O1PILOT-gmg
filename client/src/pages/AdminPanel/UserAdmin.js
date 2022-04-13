@@ -3,15 +3,17 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import { getAlluser } from "../../JS/actions/User";
 
 import "./UserAdmin.css";
 const UserAdmin = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.userReducer.user);
+  const users = useSelector((state) => state.userReducer.users);
   useEffect(() => {
-    dispatch(getAlluser);
+    dispatch(getAlluser((users, history)));
   }, []);
   return (
     <div>
@@ -57,18 +59,18 @@ const UserAdmin = () => {
                   </thead>
                   <tbody>
                     <tr>
-                      <td onLoad={getAlluser.user}>
-                        <h5 className="font-medium mb-0">{user.name}</h5>
+                      <td onLoad={getAlluser.users}>
+                        <h5 className="font-medium mb-0">{users.name}</h5>
                       </td>
                       <td>
-                        <span className="text-muted">{user.occupation}</span>
+                        <span className="text-muted">{users.occupation}</span>
                         <br />
-                        <span className="text-muted">{user.role}</span>
+                        <span className="text-muted">{users.role}</span>
                       </td>
                       <td>
-                        <span className="text-muted">{user.email}</span>
+                        <span className="text-muted">{users.email}</span>
                         <br />
-                        <span className="text-muted">{user.phonen}</span>
+                        <span className="text-muted">{users.phonen}</span>
                       </td>
 
                       <td>

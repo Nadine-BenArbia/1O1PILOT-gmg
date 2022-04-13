@@ -14,7 +14,6 @@ const initialstate = {
   errors: null,
   isLoad: false,
   isAuth: false,
-  users: {},
 };
 
 const userReducer = (state = initialstate, { type, payload }) => {
@@ -32,7 +31,7 @@ const userReducer = (state = initialstate, { type, payload }) => {
     case CURRENT_USER:
       return { ...state, user: payload.user, isLoad: false, isAuth: true };
     case ALL_USER:
-      return { ...state, user: payload, isLoad: false };
+      return { ...state, user: payload.users, isLoad: false };
     case FAIL_USER:
       return { ...state, errors: payload.errors, isLoad: false };
     case LOGOUT_USER:
