@@ -7,12 +7,13 @@ import {
 import axios from "axios";
 
 export const getAllJob = () => async (dispatch) => {
-  dispatch({ type: GET_JOBS_LOAD });
   try {
-    let result = await axios.get("api/job/");
-    dispatch({
-      type: GET_JOBS_SUCCESS,
-      payload: result.data.job,
+    await axios.get("api/job/").then((res) => {
+      console.log("data job ", res.data.job);
+      dispatch({
+        type: GET_JOBS_SUCCESS,
+        payload: res.data.job,
+      });
     });
   } catch (error) {
     dispatch({ type: GET_JOBS_FAIL });

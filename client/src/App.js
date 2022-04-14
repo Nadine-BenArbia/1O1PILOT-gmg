@@ -4,7 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import { current } from "./JS/actions/User";
+import { getAllJob } from "./JS/actions/Jobs";
+import { current, getAlluser } from "./JS/actions/User";
 import AddJob from "./pages/AddJob";
 import Admin from "./pages/AdminPanel/Admin";
 
@@ -22,6 +23,9 @@ function App() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
+    dispatch(getAlluser());
+    dispatch(getAllJob());
+    console.log("all job");
     if (token) dispatch(current());
   }, [dispatch, token]);
   return (

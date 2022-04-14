@@ -76,6 +76,7 @@ exports.getAlluser = async (req, res) => {
     const userlist = await User.find();
     // step2: when i get the list from the previous step i send it as a result
     res.send({ User: userlist, msg: "get all users" });
+    console.log(getAlluser);
   } catch (error) {
     console.log(error);
     res.status(400).send({ msg: "can not get", error });

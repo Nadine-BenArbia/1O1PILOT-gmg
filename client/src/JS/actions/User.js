@@ -6,11 +6,10 @@ import {
   LOGIN_USER,
   CURRENT_USER,
   REGISTER_USER,
-  ALL_USER,
   LOGOUT_USER,
   CLEAR_ERRORS,
-  GET_USERS_SUCCESS,
   GET_USERS_FAIL,
+  ADD_USERS,
 } from "../constant/User";
 
 export const RegisterUser = (newUser, history) => async (dispatch) => {
@@ -52,13 +51,13 @@ export const current = () => async (dispatch) => {
   }
 };
 export const getAlluser = () => async (dispatch) => {
-  dispatch({ type: ALL_USER });
   try {
-    let result = await axios.get("api/user/");
-    console.log(result.data.user);
-    dispatch({
-      type: GET_USERS_SUCCESS,
-      payload: result.data.users,
+    await axios.get("api/user/").then((res) => {
+      console.log("data user ", res.data.User);
+      dispatch({
+        type: ADD_USERS,
+        payload: res.data.User,
+      });
     });
   } catch (error) {
     dispatch({ type: GET_USERS_FAIL });
