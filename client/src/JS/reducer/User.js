@@ -14,7 +14,7 @@ const initialstate = {
   errors: null,
   isLoad: false,
   isAuth: false,
-  users: ["data"],
+  users: [],
 };
 
 const userReducer = (state = initialstate, { type, payload }) => {

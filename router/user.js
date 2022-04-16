@@ -25,4 +25,11 @@ router.get("/current", isAuth, (req, res) => {
 // get all users
 router.get("/", getAlluser);
 
+// DELETE => DELETE ()
+// @Route delete a job
+// @ Method : DELETE
+// @data: ID req.params
+// Path: http://localhost:5000/api/job/:id
+//router.delete("/:id", isAuth, deleteUser);
+
 module.exports = router;

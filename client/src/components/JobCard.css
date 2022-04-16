@@ -1,59 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
+div.logo_card {
+  display: flex;
+  width: 30%;
 }
-
-
-body {
-  background-color: rgb(164, 218, 202);
-  font-family: "Roboto", sans-serif
+div.job_card_list {
+  padding: 2%;
+  margin: 2% 10%;
+  display: flex;
 }
 div.jobList {
   display: flex;
-  flex-direction: initial;
+  flex-wrap: warap;
+  flex-direction: row;
   flex-wrap: wrap;
-}
-.card {
-  border: none;
-  border-radius: 10px;
-  width: 24% ;
-  margin: 2% 10%;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
- 
-}
-
-.c-details span {
-  font-weight: 300;
-  font-size: 13px
-}
-
-.badge span {
-  background-color: #fffbec;
-  width: 60px;
-  height: 25px;
-  padding-bottom: 3px;
-  border-radius: 5px;
-  display: flex;
-  color: #fed85d;
-  justify-content: center;
-  align-items: center
-}
-
-.progress {
-  height: 10px;
-  border-radius: 10px
-}
-
-.progress div {
-  background-color: red
-}
-
-.text1 {
-  font-size: 14px;
-  font-weight: 600
-}
-
-.text2 {
-  color: #a5aec0
 }

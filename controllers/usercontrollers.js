@@ -37,7 +37,15 @@ exports.Register = async (req, res) => {
     res.send({ errors: [{ msg: "can not register the user" }] });
   }
 };
-
+// exports.deleteUser = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     let res = await user.deleteOne({ _id: id });
+//     res.send({ msg: "deleted succ" });
+//   } catch (error) {
+//     res.status(400).send({ msg: "can not delete" });
+//   }
+// };
 exports.login = async (req, res) => {
   try {
     //email+password

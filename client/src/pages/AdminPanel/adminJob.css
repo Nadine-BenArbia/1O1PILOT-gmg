@@ -1,0 +1,8 @@
+h2 {
+  justify-content: center;
+  width: 180px;
+  padding: 7px;
+  border: 7px solid gray;
+  margin: 9px;
+  display: flex;
+}

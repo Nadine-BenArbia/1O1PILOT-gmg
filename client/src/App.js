@@ -5,7 +5,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { getAllJob } from "./JS/actions/Jobs";
-import { current, getAlluser } from "./JS/actions/User";
+import { current, deleteUser, getAlluser } from "./JS/actions/User";
 import AddJob from "./pages/AddJob";
 import Admin from "./pages/AdminPanel/Admin";
 

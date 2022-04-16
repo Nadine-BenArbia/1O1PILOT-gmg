@@ -10,6 +10,7 @@ import {
   CLEAR_ERRORS,
   GET_USERS_FAIL,
   ADD_USERS,
+  ALL_USERS,
 } from "../constant/User";
 
 export const RegisterUser = (newUser, history) => async (dispatch) => {
@@ -61,6 +62,15 @@ export const getAlluser = () => async (dispatch) => {
     });
   } catch (error) {
     dispatch({ type: GET_USERS_FAIL });
+  }
+};
+export const deleteUser = (id) => async (dispatch) => {
+  dispatch({ type: ALL_USERS });
+  try {
+    await axios.delete(`api/user/${id}`);
+    dispatch(getAlluser());
+  } catch (error) {
+    dispatch({ type: FAIL_USER });
   }
 };
 export const logout = () => {

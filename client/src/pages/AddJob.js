@@ -22,7 +22,13 @@ const AddJob = () => {
     }
     edit
       ? setJob(jobEdit)
-      : setJob({ name: "", companyName: "", skills: "", location: "" });
+      : setJob({
+          name: "",
+          companyName: "",
+          skills: "",
+          location: "",
+          phone: "",
+        });
   }, [params, edit, jobEdit]);
 
   //--------------------------------------------
@@ -68,8 +74,8 @@ const AddJob = () => {
         id="outlined-required"
         label="Location"
         onChange={handleChange}
-        name="Location"
-        value={job.Location}
+        name="location"
+        value={job.location}
       />{" "}
       <br />
       <br />
@@ -79,6 +85,15 @@ const AddJob = () => {
         onChange={handleChange}
         name="skills"
         value={job.skills}
+      />{" "}
+      <br />
+      <br />
+      <TextField
+        id="outlined-required"
+        label="email"
+        onChange={handleChange}
+        name="email"
+        value={job.email}
       />{" "}
       <br />
       <Button onClick={handleJob}>{edit ? "Edit Job" : "ADD Job"} </Button>
