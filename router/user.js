@@ -30,6 +30,6 @@ router.get("/", getAlluser);
 // @ Method : DELETE
 // @data: ID req.params
 // Path: http://localhost:5000/api/job/:id
-//router.delete("/:id", isAuth, deleteUser);
+router.delete("/:id", isAuth);
 
 module.exports = router;

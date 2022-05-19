@@ -15,6 +15,12 @@ app.use("/api/job", require("./router/job"));
 
 const PORT = process.env.PORT;
 
+//heruko
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("/client/build"));
+}
+
+//---------
 app.listen(PORT, (err) =>
   err ? console.log(err) : console.log(`server is running in PORT=  ${PORT}`)
 );

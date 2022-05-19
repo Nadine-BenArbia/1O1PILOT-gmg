@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const JobCard = ({ job }) => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.userReducer.user);
+
   const handleDelete = () => {
     const result = window.confirm("are you sure");
     if (result) {
